@@ -1,0 +1,221 @@
+% Checkpoints inegociáveis da Entrega 1 — UC Engenharia de Usabilidade, UnDF, 2/2026
+% Fontes: UCEngUsab_projeto_semestral_Entrega1.pdf e UCEngUs_modelo_matriz.xlsx
+% Marca: Manual da Marca UnDF (2022). Tipografia: Times New Roman.
+% Compilar: latexmk -lualatex checkpoints_E1.tex
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\setsansfont{Times New Roman}
+\setmonofont{Times New Roman}
+\usepackage[brazil]{babel}
+\usepackage[a4paper,margin=2.2cm,headheight=14pt]{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage[hidelinks]{hyperref}
+
+% Cores institucionais (Manual da Marca UnDF, p. 17)
+\definecolor{undfpreto}{RGB}{35,31,32}
+\definecolor{undfmarinho}{RGB}{39,48,110}
+\definecolor{undfazul}{RGB}{32,98,175}
+\definecolor{cinza}{RGB}{80,80,80}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.6pt}
+\renewcommand{\headrule}{{\color{undfazul}\hrule height\headrulewidth}}
+\fancyhead[L]{\small\color{undfmarinho}Entrega 1 --- checkpoints inegociáveis}
+\fancyhead[R]{\small\color{undfmarinho}UnDF --- Engenharia de Usabilidade}
+\fancyfoot[C]{\small\thepage}
+\fancypagestyle{plain}{\fancyhf{}\renewcommand{\headrulewidth}{0pt}\fancyfoot[C]{\small\thepage}}
+
+\titleformat{\section}{\large\bfseries\color{undfmarinho}}{\thesection}{0.5em}{}
+\titleformat{\subsection}{\normalsize\bfseries\color{undfazul}}{}{0em}{}
+\titlespacing*{\subsection}{0pt}{0.9em}{0.2em}
+
+% Caixa de seleção desenhada (Times New Roman não tem o glifo)
+\newcommand{\caixa}{{\color{undfazul}\setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.6pt}%
+  \fbox{\phantom{\rule{1.4ex}{1.4ex}}}}}
+\newlist{checks}{itemize}{1}
+\setlist[checks]{label=\caixa,leftmargin=1.5em,itemsep=0.35em,topsep=0.2em}
+% Explicação curta abaixo do item
+\newcommand{\obs}[1]{\\{\small\color{cinza}\textbf{Significa:} #1}}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.3em}
+
+\begin{document}
+\color{undfpreto}
+\thispagestyle{plain}
+
+\begin{center}
+  \includegraphics[width=5.5cm]{../../assets/marca/undf-horizontal.pdf}\par\vspace{0.8em}
+  {\Large\bfseries\color{undfmarinho}Entrega 1: checkpoints inegociáveis}\par\vspace{0.2em}
+  {\small Diagnóstico do contexto de uso e especificação de requisitos --- prazo: 20/10, no Moodle, até o início da aula}
+\end{center}
+
+\vspace{0.4em}
+Só entram aqui as exigências explícitas do enunciado e da planilha modelo. Os
+requisitos desta entrega são a régua da Entrega 3.
+
+% ---------------------------------------------------------------------
+\section{Relatório}
+
+\begin{checks}
+  \item PDF nomeado \texttt{UCEngUs\_E1\_Grupo0X.pdf}.
+    \obs{trocar o X pelo número do grupo; nome diferente dificulta a correção e pode não ser aceito.}
+\end{checks}
+
+\subsection{Seção 1 --- Identificação do serviço}
+\begin{checks}
+  \item Serviço, órgão responsável, canais disponíveis (incluindo o atendimento presencial) e natureza da demanda.
+    \obs{o canal presencial é para onde o cidadão vai quando o digital falha.}
+\end{checks}
+
+\subsection{Seção 2 --- Levantamento de dados}
+\begin{checks}
+  \item Pelo menos 4 sessões, sendo pelo menos 2 de observação de uso.
+    \obs{não contam: integrantes do grupo e colegas que nunca usaram o serviço.}
+  \item Observação sem interferência, com a pessoa pensando em voz alta.
+    \obs{a equipe não instrui, não corrige e não aponta a tela; registra ações, pausas, falas e tempo.}
+  \item Entrevista semiestruturada de 10 a 20 minutos, com perguntas abertas.
+    \obs{roteiro fixo como guia, mas respostas livres; questionário de sim/não não serve.}
+  \item Roteiro com os sete pontos mínimos.
+    \obs{última vez que usou e por quê; o que precisava obter; como soube que precisava; aparelho e lugar; o que deu errado; o que fez em seguida; se desistiu ou foi ao presencial.}
+  \item Anexo com as cinco comprovações.
+    \obs{roteiro integral; perfil de cada participante sem nome, com o tipo de sessão; registro do consentimento verbal com a fórmula usada; notas de campo ou transcrição datadas; fontes secundárias com autor, título e ano.}
+\end{checks}
+
+\subsection{Seção 3 --- Contexto de uso}
+\begin{checks}
+  \item Os quatro componentes da ISO 9241-11:2018: usuários, metas e tarefas, recursos, ambiente.
+    \obs{``Recursos'' substitui o ``equipamento'' da versão de 1998.}
+\end{checks}
+
+\subsection{Seção 4 --- Fluxo crítico}
+\begin{checks}
+  \item Um único fluxo, nomeado como ação + objeto + resultado.
+    \obs{ex.: ``solicitar segunda via de certidão até a emissão do documento''; esse fluxo é o objeto do semestre inteiro.}
+  \item Ponto de início, término observável, o que fica fora do escopo e número de etapas atuais.
+    \obs{o término observável (protocolo, documento, confirmação) será o critério de sucesso nos testes.}
+  \item Justificativa com pelo menos dois critérios entre frequência, consequência da falha, evidência de dificuldade e irreversibilidade.
+    \obs{cada critério apoiado em dado das sessões ou em fonte secundária citada.}
+\end{checks}
+
+\subsection{Seção 5 --- Personas}
+\begin{checks}
+  \item Pelo menos 4 personas, cobrindo pessoa idosa, baixa escolaridade, usuária de leitor de tela e acesso precário.
+    \obs{os quatro perfis são obrigatórios; uma persona pode reunir mais de um traço, mas nenhum perfil pode faltar.}
+  \item Base declarada em cada persona; pelo menos 2 de base primária.
+    \obs{nas primárias, cada traço remete à sessão que o originou; nas secundárias, à fonte.}
+\end{checks}
+
+\subsection{Seção 6 --- Análise hierárquica de tarefas}
+\begin{checks}
+  \item Diagrama e plano de execução da HTA do fluxo crítico.
+    \obs{decomposição objetivo → subtarefas → operações, numerada (0, 1, 1.1…), com a regra de ordem de cada nível.}
+  \item Pontos de hesitação, erro ou abandono observados nas sessões marcados na HTA.
+    \obs{a HTA mostra onde o fluxo quebra, com remissão à sessão em que isso foi observado.}
+\end{checks}
+
+\subsection{Seção 7 --- Diagnóstico}
+\begin{checks}
+  \item Tabela com pelo menos 8 achados.
+    \obs{menos de oito linhas reprova o item.}
+  \item Cada achado com evidência, origem, princípio violado e impacto.
+    \obs{evidência é captura de tela numerada e citada no texto. Origem é inspeção heurística rápida, benchmarking, reclamação pública ou ouvidoria. Princípio vem de Norman, Gestalt, Fitts ou Hick e é nomeado (ex.: Gestalt, proximidade). Impacto é descrito sobre as personas.}
+\end{checks}
+
+\subsection{Seção 8 --- Padronização e estilos de interação}
+\begin{checks}
+  \item Inconsistências internas mostradas com capturas comparadas.
+    \obs{duas telas do mesmo sistema lado a lado, com o mesmo elemento tratado de forma diferente.}
+  \item Aderência ou desvio em relação ao DSGov.
+    \obs{comparar os componentes reais do fluxo com o Design System do Governo Federal.}
+  \item Adequação dos estilos de interação às personas.
+    \obs{avaliar se formulário, menu, busca etc. servem às personas declaradas.}
+\end{checks}
+
+\subsection{Seção 9 --- Requisitos de usabilidade}
+\begin{checks}
+  \item De 6 a 8 requisitos, cobrindo eficácia, eficiência e satisfação.
+    \obs{nem 5 nem 9; nenhuma das três dimensões pode ficar sem requisito.}
+  \item Três classes de contexto derivadas do levantamento.
+    \obs{cada alvo vale para uma classe; não há número único para o sistema todo.}
+  \item Sete campos por requisito: identificador, dimensão, tarefa da HTA, classe de contexto, métrica, alvo numérico, método de verificação.
+    \obs{campo faltando torna o requisito inverificável na Entrega 3.}
+  \item Alvo com número e unidade; método com instrumento e modalidade.
+    \obs{ex.: ``no máximo 3 minutos'', medido por ``cronometragem em teste moderado''. A modalidade esperada é o teste moderado.}
+\end{checks}
+
+\subsection{Seção 10 --- Requisitos de acessibilidade}
+\begin{checks}
+  \item Seção separada da seção 9.
+    \obs{acessibilidade é classe própria de requisito; colocá-la na seção 9 é erro.}
+  \item Nível WCAG 2.2 declarado, no mínimo AA, com cada critério de sucesso nomeado.
+    \obs{declarar ``AA'' explicitamente e listar cada critério com número e título (ex.: 1.4.3 Contraste mínimo); ``seguir a WCAG'' não vale.}
+  \item Verificação por inspeção.
+    \obs{ferramenta automática ou navegação por teclado e leitor de tela; não é teste com usuário.}
+\end{checks}
+
+\subsection{Seções 12 e 13 --- Declarações}
+\begin{checks}
+  \item O que cada integrante fez.
+    \obs{descrição por pessoa; ``todos fizeram tudo'' não atende.}
+  \item Uso de IA, quando houver: ferramenta, forma de uso e etapa.
+    \obs{se houve IA em qualquer atividade da UC, declarar os três elementos.}
+\end{checks}
+
+% ---------------------------------------------------------------------
+\section{Matriz de rastreabilidade (seção 11)}
+
+\begin{checks}
+  \item Planilha \texttt{UCEngUs\_matriz\_Grupo0X.xlsx}, feita sobre o modelo da disciplina.
+    \obs{é o mesmo arquivo até a Defesa; só as colunas da E1 são preenchidas agora.}
+  \item Uma linha por requisito, contemplando todos os RU e RA do relatório.
+    \obs{a contagem de linhas da planilha bate com a de requisitos do relatório.}
+  \item ID em sequência RU01\ldots{} e RA01\ldots, sem renumerar nem reaproveitar.
+    \obs{identificador apagado não volta a ser usado; renumerar no meio do semestre quebra a rastreabilidade.}
+  \item Classe: eficácia, eficiência, satisfação ou acessibilidade.
+    \obs{conclusão da tarefa é eficácia.}
+  \item Persona de origem com a base entre parênteses.
+    \obs{ex.: ``Dona Marlene, 71 anos (base primária)''. ``Usuários em geral'' não é aceito.}
+  \item Etapa existente na HTA, ou ``Fluxo completo''.
+    \obs{a etapa citada precisa existir na HTA da seção 6.}
+  \item Classe de contexto: uma das três declaradas.
+    \obs{nunca em branco e nunca uma quarta classe.}
+  \item Métrica verificável; nas linhas RA, o critério WCAG com número e título.
+    \obs{``facilidade de uso'' não é métrica; em RA, a métrica é o critério, não a sensação de navegar.}
+  \item Alvo com número e unidade, e base quando for proporção.
+    \obs{ex.: ``80\% dos participantes''; alvo sem número, sem unidade ou percentual sem base é erro.}
+  \item Método: teste com usuário para desempenho, inspeção para acessibilidade.
+    \obs{marcar ``teste com usuário'' em critério WCAG é erro; conformidade se verifica por inspeção.}
+\end{checks}
+
+% ---------------------------------------------------------------------
+\section{Apresentação}
+
+\begin{checks}
+  \item Entre 5 e 10 minutos por equipe.
+    \obs{é a única regra do enunciado para a apresentação; o conteúdo não é fixado.}
+\end{checks}
+
+% ---------------------------------------------------------------------
+\section{Conceitos que o relatório precisa trabalhar}
+
+\begin{itemize}[leftmargin=1.2em,itemsep=0.15em]
+  \item Design centrado no ser humano (ISO 9241-210) e usabilidade (ISO 9241-11:2018): eficácia, eficiência, satisfação; diferenças em relação à NBR 9241-11:2002.
+  \item Contexto de uso: usuários, metas e tarefas, recursos, ambiente.
+  \item Observação de uso, entrevista semiestruturada, consentimento; fonte primária, secundária e inspeção própria.
+  \item Fluxo crítico, personas e análise hierárquica de tarefas.
+  \item Princípios de Norman, leis da Gestalt, Lei de Fitts, Lei de Hick.
+  \item Consistência, DSGov e estilos de interação.
+  \item Requisito mensurável: métrica, alvo, classe de contexto, instrumento e modalidade (teste moderado e não moderado); SUS.
+  \item Acessibilidade: LBI art.~63, padrão federal de conformidade, WCAG 2.2 (níveis e critérios de sucesso), NVDA e navegação por teclado.
+  \item Rastreabilidade de requisitos.
+\end{itemize}
+
+\end{document}

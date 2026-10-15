@@ -1,0 +1,29 @@
+# Lista de permissão: ignora tudo e libera só o código-fonte dos documentos.
+# PDFs gerados e auxiliares do LaTeX ficam fora do repositório; para obter
+# os PDFs, compile com `latexmk -lualatex <arquivo>.tex`.
+
+# Ignora tudo...
+*
+
+# ...mas continua entrando nos diretórios para avaliar as regras abaixo
+!*/
+
+# Configuração do repositório
+!.gitignore
+!README.md
+
+# Código-fonte LaTeX
+!*.tex
+!*.bib
+!*.cls
+!*.sty
+!latexmkrc
+!.latexmkrc
+
+# Marca da UnDF (logos vetoriais usadas pelos documentos)
+!assets/marca/*.pdf
+!assets/**/*.png
+!assets/**/*.svg
+
+# Lixo de sistema, mesmo dentro das pastas liberadas
+.DS_Store
